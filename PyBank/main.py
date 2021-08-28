@@ -4,7 +4,7 @@ import csv
 # file to read from
 budget_data_path = os.path.join('.', 'Resources', 'budget_data.csv')
 
-# calculate the total_months, average_change, the find the months with great increase and decrease.
+# calculate the total_months, average_change, then find the months with great increase and decrease.
 total_months = 0
 total = 0
 average_change = 0
@@ -36,10 +36,14 @@ with open(budget_data_path, 'r') as csvfile:
         prof_loss = int(row[1])
         month = row[0]
 
+        # add 1 to totla_months
         total_months += 1
+        # add the durrent row to the total
         total = total + prof_loss
+        # calclate the change from the previsou row
         total_change += (prof_loss - current_prof_loss)
 
+        # check if gretest increase or decrease month needs to be updated
         if (prof_loss - current_prof_loss) > greatest_inc_in_profits:
 
             greatest_inc_in_profits = (prof_loss - current_prof_loss)
