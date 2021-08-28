@@ -19,6 +19,7 @@ with open(election_data_path, 'r') as csvfile:
 
     for candidate in csvreader:
 
+        # add 1 to total votes cast
         total_votes_cast += 1
 
         candidate_name = candidate[2]

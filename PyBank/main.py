@@ -36,11 +36,11 @@ with open(budget_data_path, 'r') as csvfile:
         prof_loss = int(row[1])
         month = row[0]
 
-        # add 1 to totla_months
+        # add 1 to total_months
         total_months += 1
-        # add the durrent row to the total
+        # add the current row to the total
         total = total + prof_loss
-        # calclate the change from the previsou row
+        # calclate the change from the previous row
         total_change += (prof_loss - current_prof_loss)
 
         # check if gretest increase or decrease month needs to be updated
