@@ -40,8 +40,6 @@ for candidate in candidates:
     # calculate the % of votes for each candidate and update the dictionary with the percentages 
     candidates[candidate] = [candidates[candidate]/total_votes_cast, candidates[candidate]]
 
-print(candidates)
-
 #-----------------------------------------------------------------------------------------
 # print the analysis
 print("\nElection Results\n-------------------------")
