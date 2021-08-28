@@ -38,16 +38,20 @@ for candidate in candidates:
         winner = candidate
 
     # calculate the % of votes for each candidate and update the dictionary with the percentages 
-    candidates[candidate] = candidates[candidate]/total_votes_cast
+    candidates[candidate] = [candidates[candidate]/total_votes_cast, candidates[candidate]]
 
+print(candidates)
+
+#-----------------------------------------------------------------------------------------
 # print the analysis
 print("\nElection Results\n-------------------------")
 print(f"Total Votes: {total_votes_cast}")
 print("-------------------------")
 
 for candidate in candidates:
-    percentage_won = round((candidates[candidate] * 100),3)
-    print(f"{candidate}: {percentage_won}%")
+    percentage_won = round((candidates[candidate][0] * 100),3)
+    votes = candidates[candidate][1]
+    print(f"{candidate}: {percentage_won}% ({votes})")
 
 print("-------------------------")
 print(f"Winner: {winner}")
@@ -67,8 +71,9 @@ with open(output_file, "w", newline="") as datafile:
     datafile.write("-------------------------\n")
 
     for candidate in candidates:
-        percentage_won = round((candidates[candidate] * 100),3)
-        datafile.write(f"{candidate}: {percentage_won}%\n")
+        percentage_won = round((candidates[candidate][0] * 100),3)
+        votes = candidates[candidate][1]
+        datafile.write(f"{candidate}: {percentage_won}% ({votes})\n")
  
     datafile.write("-------------------------\n")
     datafile.write(f"Winner: {winner}\n")
