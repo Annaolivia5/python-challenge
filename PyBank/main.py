@@ -56,6 +56,7 @@ with open(budget_data_path, 'r') as csvfile:
 average_change = total_change / (total_months -1)
 
 # print the analysis
+print("\nFinancial Analysis\n----------------------------")
 print(f"Total Month: {total_months}")
 print(f"Total: ${total}")
 print(f"Average Change: ${round(average_change, 2)}")

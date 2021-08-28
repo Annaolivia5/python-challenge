@@ -41,7 +41,7 @@ for candidate in candidates:
     candidates[candidate] = candidates[candidate]/total_votes_cast
 
 # print the analysis
-print("Election Results\n-------------------------\n")
+print("\nElection Results\n-------------------------")
 print(f"Total Votes: {total_votes_cast}")
 print("-------------------------")
 
